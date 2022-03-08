@@ -36,6 +36,11 @@
     border-radius: 5px;
     background-color: gainsboro;
 }
+.link-contains{
+    color: rgb(166, 245, 245);
+    text-decoration: underline;
+    cursor: pointer;
+}
 .input__area{
    display: flex;
    justify-content: center;

@@ -19,9 +19,11 @@
             <p class="bot-chat">Hello user... This is your Bot Alex...How I can help You?</p>
             
         </div>
-        <div class="input__area">
-            <input id="user-input" type="text" />
-            <a onclick="sendMessage()" class="btn__send">Send</a>
+        <div >
+            <form class="input__area" onsubmit="sendMessage()">
+                <input id="user-input" type="text" />
+                <a onclick="sendMessage()" class="btn__send">Send</a>
+            </form>
         </div>
     </div>
 
