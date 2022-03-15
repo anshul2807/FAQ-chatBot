@@ -17,6 +17,8 @@ function sendMessage(){
     tagP1.classList.add("user-chat");
     tagP2.appendChild(document.createTextNode(curr_time))
     tagP2.classList.add("time-Userchat");
+    if(isValidHttpUrl(curr_msg))
+      tagDiv=checkLink(tagDiv,curr_msg);
     tagDiv.appendChild(tagP1);
     tagDiv.appendChild(tagP2);
     chatBody.appendChild(tagDiv);
@@ -25,12 +27,27 @@ function sendMessage(){
     botRediirect(curr_msg);
     scrollToBottom("chat-body");
 }
+function checkLink(tagDiv,msg){
+  let link=msg.split("/")[3];
+  let thm=`https://img.youtube.com/vi/${link}/0.jpg`;
+  if(msg.split("/")[2]==="youtu.be"){
+    let img=document.createElement('img');
+    img.src=thm;
+    img.alt="link";
+    img.classList.add("user-img");
+    tagDiv.appendChild(img);
+  }else{
+    console.log("Not a Valid URL");
+  }
+  return tagDiv;
+}
 function TextQuerryProcessing(curr_msg){
   let span=document.createElement("span");
   let msg=curr_msg.split(" ");
   msg.map(m=>{
     if(isValidHttpUrl(m)){
-      let new_ele=document.createElement('span');
+      let new_ele=document.createElement('a');
+      new_ele.href=m;
       new_ele.appendChild(document.createTextNode(m))
       new_ele.classList.add("link-contains")
       span.appendChild(new_ele)
@@ -94,6 +111,9 @@ function isValidHttpUrl(string) {
       return false;  
     }
     return url.protocol === "http:" || url.protocol === "https:";
+}
+function addOptions(querry,{btn,btn_name}){
+ 
 }
 window.onload=()=>{
     document.getElementById("onload-time").innerHTML=getCurrTime()

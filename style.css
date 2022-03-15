@@ -17,7 +17,21 @@
     overflow-y:scroll;
 }
 .sendMessage-container{
+    /* border: 1px solid black; */
+    
 }
+
+.user-img{
+    position: relative;
+    float: right;
+    left: -15px;
+    top: 1px;
+    z-index: 1;
+    width: 203px;
+    height: 100px;
+    border-radius: 10px 0px 0px 0px;
+}
+
 .bot-chat{
     text-align: left;
     color: red;
@@ -75,6 +89,7 @@
     outline: none;
     border: none;
 }
+
 
 .btn__send{
     border: 1px solid black;
