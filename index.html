@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>FAQ</title>
+</head>
+<body>
+    <div class="container-1">
+        <div class="heading">
+            <h1>FAQ Chat Bot</h1>
+        </div>
+        <div class="chat__body" id="chat-body">
+            <div class="sendMessage-container">
+                <p class="bot-chat">Alex, Your Bot is here...For Question's enter your Query</p>
+                <p class="time-Botchat"><span id="onload-time"></span></p>
+            </div>
+            
+        </div>
+        <!-- Sticker  -->
+        <div class="chat__sticker none">
+            <div class="sticker__body">
+                <img src="./static/lucy-1.png" />
+            </div>
+        </div>
+        <!-- Form input -->
+        <div >
+            <form class="input__area" onsubmit="sendMessage()">
+                <input id="user-input" type="text" />
+                <a onclick="sendMessage()" class="btn__send">Send</a>
+                <div onclick="handleStickers()" class="btn__lucian">
+                    <img src="./static/lucy-1.png"  alt="lucy"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- JQuerry -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Local JS -->
+    <script src="script.js"></script>
+</body>
+</html>
