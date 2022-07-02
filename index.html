@@ -13,29 +13,20 @@
 <body>
     <div class="container-1">
         <div class="heading">
-            <h1>FAQ Chat Bot</h1>
+            <h1>FAQ Chat Bot, For GEHU</h1>
         </div>
         <div class="chat__body" id="chat-body">
             <div class="sendMessage-container">
-                <p class="bot-chat">Alex, Your Bot is here...For Question's enter your Query</p>
+                <p class="bot-chat">This is FAQ Chat Bot for GEHU, You can Only get GEHU Faculty list!<br>More Feature's are Comming soon!!</p>
                 <p class="time-Botchat"><span id="onload-time"></span></p>
             </div>
             
         </div>
-        <!-- Sticker  -->
-        <div class="chat__sticker none">
-            <div class="sticker__body">
-                <img src="./static/lucy-1.png" />
-            </div>
-        </div>
         <!-- Form input -->
         <div >
             <form class="input__area" onsubmit="sendMessage()">
-                <input id="user-input" type="text" />
+                <input id="user-input" type="text" placeholder="Enter you Query!"/>
                 <a onclick="sendMessage()" class="btn__send">Send</a>
-                <div onclick="handleStickers()" class="btn__lucian">
-                    <img src="./static/lucy-1.png"  alt="lucy"/>
-                </div>
             </form>
         </div>
     </div>

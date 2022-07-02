@@ -79,7 +79,7 @@ function botRediirect(query){
   sent_audio.play()
 }
 // API call
-async function getDataFromServerPOST(url,usermsg){
+ function getDataFromServerPOST(url,usermsg){
     fetch(url,{
       method:"POST",
       headers: {
@@ -202,7 +202,8 @@ function handleStickerSection(flag){
 
 function messageProcess(query){
   let data=query.split("/");
-  let localURL="http://localhost:4000"
+  let localURL="http://localhost:4000";
+  // console.log(data);
   if(data.length<=1) {
     botRediirect("Not a valid Request");
     return;
@@ -224,9 +225,17 @@ function messageProcess(query){
     case "faculty":
       if(data[2]=="lists"){
         getDataFromServerGET(`${localURL}/faculty/lists/`);
+      }else if(data[2]=="addlist"){
+        getDataFromServerPOST(`${localURL}/faculty/addlist/`,{
+          name:data[3],
+          email:data[4],
+          qualification:data[5],
+          department:data[6],
+          workexperience:data[7]
+        });
       }
       break;
-  
+    
     default:
       botRediirect("Not a valid Request");
       break;
